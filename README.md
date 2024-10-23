@@ -55,3 +55,20 @@ exemple:
 ```bash
 <bean id="monBean" class="com.example.MonBean" scope="session"/>
 ```
+
+## Spring Core Annotation
+- **@Component** : permet à Spring de scanner les classes et de les instancier automatiquement.
+- **@Service**: Cette annotation clarifie que la classe implémente une logique métier.
+- **@Repository**: est utilisé dans la couche de persistance pour encapsuler la logique d'accès aux données.
+-**@Controller**: Elle est responsable de gérer les requêtes HTTP et de renvoyer des réponses HTTP.
+- **@Autowired**:Cette annotation permet l'injection automatique de dépendances dans un bean
+- **@Scope**:pour définir la portée (scope) d'un bean Spring, c'est-à-dire son cycle de vie dans l'application.
+- **@PostConstruct et @PreDestroy**: Utilisées pour marquer les méthodes qui doivent être exécutées après l'initialisation d'un bean (@PostConstruct) ou avant sa destruction (@PreDestroy).
+
+## Spring Data JPA
+permet aux développeurs de manipuler des données dans une base de données relationnelle de manière efficace tout en minimisant la quantité de code à écrire.
+L'objectif principal de Spring Data JPA est de simplifier les opérations CRUD (Créer, Lire, Mettre à jour, Supprimer) en réduisant la quantité de code "boilerplate" nécessaire pour implémenter les couches d'accès aux données.
+### les avantages de JPA
+- Réduction du code
+- Facilité de pagination et de tri findAll(Sort.by(Sort.Direction.ASC, "nom"));findAll(PageRequest.of(0, 5));
+- Support des transactions
