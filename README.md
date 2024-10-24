@@ -1,15 +1,26 @@
 # TechNova
-## Spring Framework  
+# Table des matières
+
+- [Spring Framework](#spring-framework)
+- [Caractéristiques principales de Spring](#caractéristiques-principales-de-spring)
+- [L'Inversion de contrôle (IoC)](#linversion-de-contrôle-ioc)
+- [Gestion des Beans](#gestion-des-beans)
+- [ApplicationContext](#applicationcontext)
+- [Spring Core Annotation](#spring-core-annotation)
+- [Spring Data JPA](#spring-data-jpa)
+- [Spring MVC](#spring-mvc)
+
+## Spring Framework
 est un framework open-source, puissant et polyvalent pour le développement d'applications Java. Il permet aux développeurs de créer des applications Java robustes, bien structurées, évolutives, et faciles à maintenir.
 Le framework est modulable, ce qui signifie que vous pouvez utiliser seulement les modules nécessaires à votre projet, ou le framework dans son intégralité. Parmi les modules les plus utilisés, on trouve 
 Spring Core, Spring MVC, Spring Data, Spring Security, et Spring Boot.
-## Caractéristiques principales de Spring :
+## Caractéristiques principales de Spring
 - Injection de dépendances (DI) :C’est un des concepts fondamentaux du framework, permettant la gestion des objets et de leurs dépendances sans avoir à les instancier manuellement dans le code.
 - Programmation orientée aspect (AOP): Permet de séparer les préoccupations transversales (comme la gestion des transactions ou la gestion des logs) du reste du code métier.
 - Intégration facile avec d'autres technologies: Spring s’intègre bien avec d’autres frameworks et bibliothèques comme Hibernate, JPA.
 - Facilité de test : Le framework permet un développement orienté test, en rendant les composants facilement testables grâce à l'injection de dépendances.
-## L'Inversion de contrôle (IoC): 
- est un principe de conception qui permet aux développeurs de se concentrer sur la logique métier de l'application, en déléguant la gestion des objets et de leurs dépendances à un framework (comme Spring). Cela signifie que c'est le framework, plutôt que l'application elle-même, qui gère la création, la configuration et le cycle de vie des objets. Ainsi, IoC simplifie la structure du code et réduit le couplage entre les composants, rendant l'application plus modulaire et plus facile à maintenir. 
+## L'inversion de contrôle (IoC
+est un principe de conception qui permet aux développeurs de se concentrer sur la logique métier de l'application, en déléguant la gestion des objets et de leurs dépendances à un framework (comme Spring). Cela signifie que c'est le framework, plutôt que l'application elle-même, qui gère la création, la configuration et le cycle de vie des objets. Ainsi, IoC simplifie la structure du code et réduit le couplage entre les composants, rendant l'application plus modulaire et plus facile à maintenir. 
 ## Example
 ``` java
 <bean id="userDao" class="com.example.techNovaa.dao.UserDao" />
