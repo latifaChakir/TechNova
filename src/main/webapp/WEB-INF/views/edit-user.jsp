@@ -22,6 +22,9 @@
 <body>
 <div >
     <div>
+        <c:if test="${not empty errorMessage}">
+            <div class="alert alert-danger">${errorMessage}</div>
+        </c:if>
         <div class="modal-content" style="padding: 0 4rem">
             <form action="<c:url value='/users/update' />" method="post">                <div class="modal-header">
                     <h4 class="modal-title">Edit User</h4>

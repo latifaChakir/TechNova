@@ -10,7 +10,14 @@ Spring Core, Spring MVC, Spring Data, Spring Security, et Spring Boot.
 - Facilité de test : Le framework permet un développement orienté test, en rendant les composants facilement testables grâce à l'injection de dépendances.
 ## L'Inversion de contrôle (IoC): 
  est un principe de conception qui permet aux développeurs de se concentrer sur la logique métier de l'application, en déléguant la gestion des objets et de leurs dépendances à un framework (comme Spring). Cela signifie que c'est le framework, plutôt que l'application elle-même, qui gère la création, la configuration et le cycle de vie des objets. Ainsi, IoC simplifie la structure du code et réduit le couplage entre les composants, rendant l'application plus modulaire et plus facile à maintenir. 
- ## Principaux avantages de l'IoC :
+## Example
+``` java
+<bean id="userDao" class="com.example.techNovaa.dao.UserDao" />
+<bean id="userService" class="com.example.techNovaa.service.UserService">
+    <constructor-arg ref="userDao"/>
+</bean>
+```
+## Principaux avantages de l'IoC :
 - Couplage faible:  IoC réduit le couplage entre les composants en les rendant moins dépendants les uns des autres.
 - Meilleure testabilité: Avec IoC, il devient facile de remplacer des dépendances par des objets simulés (mocks) lors des tests unitaires.
 - Séparation des préoccupations:  Les objets ne sont plus responsables de créer ou de gérer leurs dépendances. Ils se concentrent uniquement sur leur logique métier, tandis que le conteneur Spring s'occupe de la gestion des dépendances et du cycle de vie des objets.
@@ -34,28 +41,34 @@ Le scope d'un Bean définit combien d'instances de ce Bean peuvent exister dans 
 ### 1. Singleton
 C'est le scope par défaut dans Spring. Un Bean Singleton signifie qu'une seule instance de ce Bean est créée dans le conteneur Spring, et cette instance est partagée tout au long du cycle de vie de l'application.
 exemple:
-```bash
+``` java
   <bean id="monBean" class="com.example.MonBean" scope="singleton"/>
 ```
 ### 2. Prototype
 signifie qu'une nouvelle instance du Bean est créée à chaque fois qu'il est demandé. Ce scope est utile si vous avez besoin d'une nouvelle instance à chaque demande.
 exemple:
-```bash
+``` java
 <bean id="monBean" class="com.example.MonBean" scope="prototype"/>
 ```
 ### 3. Request (Demande HTTP)
 Le scope request est utilisé dans les applications web. Chaque requête HTTP reçoit une instance distincte du Bean.
 exemple:
-```bash
+``` java
 <bean id="monBean" class="com.example.MonBean" scope="request"/>
 ```
 ### 4. Session
 Le scope session est également utilisé dans les applications web. Une instance unique du Bean est créée pour chaque session utilisateur, et cette instance reste active tant que la session est valide.
 exemple:
-```bash
+``` java
 <bean id="monBean" class="com.example.MonBean" scope="session"/>
 ```
-
+## ApplicationContext
+est l'interface centrale pour configurer et gérer les beans Spring. Il est responsable de l'injection de dépendances, de la gestion du cycle de vie des beans, et d'autres fonctionnalités importantes.
+### Example
+``` java
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService userService = context.getBean(UserService.class);
+```
 ## Spring Core Annotation
 - **@Component** : permet à Spring de scanner les classes et de les instancier automatiquement.
 - **@Service**: Cette annotation clarifie que la classe implémente une logique métier.
@@ -72,3 +85,34 @@ L'objectif principal de Spring Data JPA est de simplifier les opérations CRUD (
 - Réduction du code
 - Facilité de pagination et de tri findAll(Sort.by(Sort.Direction.ASC, "nom"));findAll(PageRequest.of(0, 5));
 - Support des transactions
+### Comment utiliser JPA
+``` java
+public interface UserDao extends JpaRepository<User, Long> {}
+```
+
+## Spring MVC
+**Spring MVC** (Model-View-Controller) est un framework au sein de Spring qui facilite le développement d'applications web basées sur l'architecture MVC. 
+### Fonctionnement général :
+- L'utilisateur fait une requête HTTP (comme en accédant à une URL).
+- La requête est interceptée par le DispatcherServlet, qui est le cœur de Spring MVC. Il agit comme un contrôleur frontal pour toutes les requêtes.
+- Le Controller associé traite la requête, effectue les opérations nécessaires (comme appeler un service pour récupérer des données) et renvoie un modèle avec des données.
+- Le DispatcherServlet passe le modèle à une vue qui est rendue pour renvoyer une réponse à l'utilisateur.
+ ### Exemple
+``` java
+@Controller
+@RequestMapping("/users")
+public class UserController {
+    private final UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+    @GetMapping
+    public String getAllUsers(Model model) {
+        List<User> users = userService.getUsers();
+        model.addAttribute("users", users);
+        return "users-list";
+    }
+```
+
+
+

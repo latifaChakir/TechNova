@@ -108,10 +108,9 @@
                                     <h2>Manage <b>Users</b></h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
-                                        <i class="material-icons">&#xE147;</i> <span>Add New User</span>
+                                    <a href="#addEmployeeModal" class="btn btn-success d-flex align-items-center" data-toggle="modal">
+                                        <i class="material-icons mr-2">&#xE147;</i> <span>Add New User</span>
                                     </a>
-
                                 </div>
                             </div>
                         </div>
