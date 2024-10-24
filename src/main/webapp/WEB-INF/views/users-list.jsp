@@ -147,15 +147,11 @@
                                 <td><c:out value="${user.identificationNumber}" /></td>
                                 <td><c:out value="${user.nationality}" /></td>
                                 <td>
-                                    <a href="utilisateurs?id=1&action=edit" class="edit">
-                                        <i class="material-icons" title="Edit">&#xE254;</i>
+                                    <a href="/TechNovaa/users/edit/${user.id}" class="edit">
+                                        <i class="material-icons" style="color: darkorange" title="Edit">&#xE254;</i>
                                     </a>
-                                    <form action="utilisateurs?action=delete" method="post" style="display:inline;">
-                                        <input type="hidden" name="id" value="1">
-                                        <button type="submit" class="delete-button" style="background:none; border:none; color:inherit; padding:0; font: inherit; cursor: pointer;">
-                                            <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
-                                        </button>
-                                    </form>
+                                    <a href="/TechNovaa/users/delete/${user.id}" class="delete">
+                                        <i class="material-icons" style="color: #dc3545" data-toggle="tooltip" title="Delete">&#xE872;</i>                                    </a>
                                 </td>
                             </tr>
                             </c:forEach>

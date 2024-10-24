@@ -24,21 +24,21 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Optional<User> getUserById(Long id) {
-        return Optional.empty();
+        return userDao.findById(id);
     }
 
     @Override
     public User saveUser(User user) {
-        return null;
+        return userDao.save(user);
     }
 
     @Override
     public User updateUser(User user) {
-        return null;
+        return userDao.save(user);
     }
 
     @Override
     public void deleteUser(Long id) {
-
+        userDao.deleteById(id);
     }
 }
