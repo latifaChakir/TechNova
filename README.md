@@ -124,6 +124,20 @@ public class UserController {
         return "users-list";
     }
 ```
+## Installation
+1. Clonez le dépôt 
+Run
+``` java
+     git clone https://github.com/latifaChakir/TechNova.git
+ ````
+2. Configurez la base de données dans applicationContext.xml dans resources
+3. Construisez le projet en utilisant Maven
+   Run 
+``` java
+     mvn clean install
+ ````
+4. Déployez l'application sur un conteneur de servlets(TOMCAT, JBOSS, GlassFish)
+5. Accédez à l'application via votre navigateur 
 
 
 
