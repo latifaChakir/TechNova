@@ -1,8 +1,9 @@
-package com.TachNova.service;
+package com.example.techNovaa.service;
 
-import com.TachNova.bean.User;
-import com.TachNova.dao.UserDao;
+import com.example.techNovaa.bean.User;
+import com.example.techNovaa.dao.UserDao;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,14 +12,14 @@ import java.util.Optional;
 @Transactional
 public class UserServiceImpl implements UserService{
     private UserDao userDao;
-
+    @Autowired
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }
 
     @Override
     public List<User> getUsers() {
-        return List.of();
+         return userDao.findAll();
     }
 
     @Override

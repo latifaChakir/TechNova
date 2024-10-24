@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TechNovaa">
+    <output-path>$PROJECT_DIR$/out/artifacts/TechNovaa</output-path>
+    <root id="archive" name="TechNovaa.war" />
+  </artifact>
+</component>

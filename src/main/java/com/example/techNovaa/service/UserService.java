@@ -1,6 +1,6 @@
-package com.TachNova.service;
+package com.example.techNovaa.service;
 
-import com.TachNova.bean.User;
+import com.example.techNovaa.bean.User;
 
 import java.util.List;
 import java.util.Optional;

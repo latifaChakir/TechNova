@@ -1,6 +1,6 @@
-package com.TachNova.dao;
+package com.example.techNovaa.dao;
 
-import com.TachNova.bean.User;
+import com.example.techNovaa.bean.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
