@@ -9,6 +9,7 @@
 - [Spring Core Annotation](#spring-core-annotation)
 - [Spring Data JPA](#spring-data-jpa)
 - [Spring MVC](#spring-mvc)
+- [Installation](#installation)
 
 ## Spring Framework
 est un framework open-source, puissant et polyvalent pour le développement d'applications Java. Il permet aux développeurs de créer des applications Java robustes, bien structurées, évolutives, et faciles à maintenir.
@@ -125,14 +126,12 @@ public class UserController {
     }
 ```
 ## Installation
-1. Clonez le dépôt 
-Run
+1. Clonez le dépôt
 ``` java
      git clone https://github.com/latifaChakir/TechNova.git
  ````
 2. Configurez la base de données dans applicationContext.xml dans resources
 3. Construisez le projet en utilisant Maven
-   Run 
 ``` java
      mvn clean install
  ````
