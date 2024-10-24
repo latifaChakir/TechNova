@@ -104,6 +104,8 @@ public interface UserDao extends JpaRepository<User, Long> {}
 
 ## Spring MVC
 **Spring MVC** (Model-View-Controller) est un framework au sein de Spring qui facilite le développement d'applications web basées sur l'architecture MVC. 
+- **Bien noté :**
+**MVC** où le Controller gère la logique, le Model contient les données, et la View affiche les données au client. Aussi, DispatcherServlet est le cœur de Spring MVC qui distribue les requêtes aux contrôleurs appropriés.
 ### Fonctionnement général :
 - L'utilisateur fait une requête HTTP (comme en accédant à une URL).
 - La requête est interceptée par le DispatcherServlet, qui est le cœur de Spring MVC. Il agit comme un contrôleur frontal pour toutes les requêtes.
